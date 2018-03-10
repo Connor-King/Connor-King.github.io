@@ -1,8 +1,8 @@
 ### GENERAL SETTINGS ###
 
 # Site settings
-title: UWEGAMES
-description: "Games development from an elder's persepective."
+title: Connor-King
+description: "Games development progress and portfolio"
 analytics: #Google analytics code in the format XX-nnnnnnnn-n
 baseurl: "/" #important: start with /
 url: "https://github.com/Connor-King/Connor-King.github.io.git"
@@ -43,7 +43,7 @@ social:
   - title: facebook
     url:
   - title: twitter
-    url:
+    url: https://twitter.com/Connor_King54
   - title: instagram
     url:
   - title: tumblr
@@ -53,9 +53,9 @@ social:
 address:
   - lines:
     - University of the West of England,
-    - Frenchay Campus, Bristol, BS16 1QY,
+    - Frenchay Campus, Bristol, BS16 1US,
     - United Kingdom.
-email: connor2.king@live.uwe.ac.uk
+email: connor.king3131@gmail.com
 
 
 
@@ -65,13 +65,13 @@ email: connor2.king@live.uwe.ac.uk
 members:
   - name: Connor King
     position: Student
-    text: I am a keen and passionate games developer, whose love of programming extends to mentoring others to allow them to develop games for themselves.
+    text: Truly passionate gamer and games developer. I'm self motivated and enjoy making games.
     img: profile_1.jpg
     social:
       - title: envelope #use for email address
-        url: mailto:connor2.king@live.uwe.ac.uk
+        url: mailto:connor.king3131@gmail.com
       - title: twitter
-        url: http://twitter.com/HuxyUK
+        url: https://twitter.com/Connor_King54
  
 # Short text about your company. Shown in footer on every page and also separately on Home and Contact page.
-about: "Those who can do and those who can't teach games design."
+about: "Coding can be more enjoyable than playing a game... if you like puzzle games."
