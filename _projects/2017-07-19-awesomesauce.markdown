@@ -1,6 +1,6 @@
 ---
 layout: project
-title:  "Snake"
+title:  "Snake Remake"
 date:   2017-11-10 16:54:46
 author: Connor King
 categories:
