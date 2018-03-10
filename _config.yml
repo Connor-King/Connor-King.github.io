@@ -52,8 +52,8 @@ social:
 # Postal address (add as many lines as necessary). Shown in footer and on Contact page.
 address:
   - lines:
-    - University of the West of England,
-    - Frenchay Campus, Bristol, BS16 1US,
+    - 3 High Street,
+    - Staple Hill, Bristol, BS16 5HA,
     - United Kingdom.
 email: connor.king3131@gmail.com
 
@@ -65,7 +65,7 @@ email: connor.king3131@gmail.com
 members:
   - name: Connor King
     position: Student
-    text: Truly passionate gamer and games developer. I'm self motivated and enjoy making games.
+    text: Truly passionate gamer and games developer. I am self motivated and enjoy making games.
     img: profile_1.jpg
     social:
       - title: envelope #use for email address
