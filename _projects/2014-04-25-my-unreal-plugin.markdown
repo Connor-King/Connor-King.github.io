@@ -13,9 +13,8 @@ carousel:
 - unreal04.png
 - unreal05.png
 - unreal06.png
-- unreal.mp4
 tagged: Unreal
-Video: https://www.youtube.com/watch?v=mQX5AIM_q_s
+website: https://www.youtube.com/watch?v=mQX5AIM_q_s
 ---
 #### Unreal Engine Conversation Tree
 This is my version of a conversation tree within Unreal Engine 4. I created this for a University assignment. It is easily expandable and easily added to other NPCs. It is also really easy to add conversation outomcomes/effects.
