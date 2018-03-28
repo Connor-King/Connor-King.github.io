@@ -1,12 +1,12 @@
 ---
 layout: project
-title:  "My Unreal Plugin"
-date:   2014-04-25 16:54:46
-author: James Huxtable
+title:  "My Unreal Conversation Tree"
+date:   2017-10-25 16:54:46
+author: Connor King
 categories:
 - project
 img: unreal_logo.jpg
-carousel:
+conversation:
 - single01.jpg
 - single02.jpg
 - single03.jpg
