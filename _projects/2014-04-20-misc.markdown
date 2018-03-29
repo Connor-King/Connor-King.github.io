@@ -1,7 +1,7 @@
 ---
 layout: project
 title:  "Player Controller, Camera, 2.5D Mode and More"
-date:   2014-04-25 16:54:46
+date:   2018-02-20 16:54:46
 author: Connor King
 categories:
 - project
