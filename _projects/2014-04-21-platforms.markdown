@@ -5,7 +5,7 @@ date:   2014-04-25 16:54:46
 author: Connor King
 categories:
 - project
-img: - platform.png
+img: platform.png
 thumb: thumb02.jpg
 carousel:
 - platform01.png
