@@ -1,22 +1,33 @@
 ---
 layout: project
-title:  "YOUR PROJECT NAME"
+title:  "Player Controller, Camera, 2.5D Mode and More"
 date:   2014-04-25 16:54:46
-author: Marcel Newman
+author: Connor King
 categories:
 - project
-img: portfolio_05.jpg
+img: misc.png
 thumb: thumb02.jpg
 carousel:
-- single01.jpg
-- single02.jpg
-- single03.jpg
-tagged: Flat, UI, Development
-client: Wonder Corp.
-website: http://blacktie.co
+- misc01.png
+- misc02.png
+- misc03.png
+- misc04.png
+- misc05.png
+- misc06.png
+- misc07.png
+- misc08.png
+tagged: Unity, Player Controller, Powerups, 2.5D, Door, Camera
+client: None
+website: https://youtu.be/_r-xqbwteTY
 ---
-####YOUR PROJECT NAME
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+####Player Controller, Camera, 2.5D Mode and More
+This is a small collection of features I have implemented into Unity. There is a player controller, camera, powerups, 2.5D mode, see through materials and more. 
 
 ####Our Proposal
-It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+1. Player Controller
+2. 2.5D Mode
+3. Smooth Player Follow Camera
+4. Easy to Use Powerups
+5. See Through Materials
+6. Door and Switch
+
