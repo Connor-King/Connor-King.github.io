@@ -20,10 +20,10 @@ tagged: Combat, UI, Boss, Unity, C#
 client: None
 website: https://www.youtube.com/watch?v=MbW3GDtUthQ&t=12s
 ---
-####Unity Combat System
+#### Unity Combat System
 This is a combat system and boss which I created within Unity for a university assignment. I added different movement styles, easily changeable stats and an area which it patrolls to the boss. I also added a lot of user feedback for the combat system including, screen flash, screen shake, controller rumble, knockback, material flash and more.
 
-####Features
+#### Features
 Combat System:
 1. Knockback
 2. Screen Flash

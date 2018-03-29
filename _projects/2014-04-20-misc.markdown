@@ -20,10 +20,10 @@ tagged: Unity, Player Controller, Powerups, 2.5D, Door, Camera
 client: None
 website: https://youtu.be/_r-xqbwteTY
 ---
-####Player Controller, Camera, 2.5D Mode and More
+#### Player Controller, Camera, 2.5D Mode and More
 This is a small collection of features I have implemented into Unity. There is a player controller, camera, powerups, 2.5D mode, see through materials and more. 
 
-####Our Proposal
+#### Our Proposal
 1. Player Controller
 2. 2.5D Mode
 3. Smooth Player Follow Camera
