@@ -13,7 +13,7 @@ thumb: c_thumb.jpg
 published: true
 ---
 
-<b>Day 4</b>Adding sliding blocks and pressure button.<!--more-->
+<b>Day 4 </b>Adding sliding blocks and pressure button.<!--more-->
 
 I created a new class named sliding blocks which is derived from the interactable class. This is a block, which when collided with, slides in the direction of which it was pushed until it hits a wall or another block. The walls are just more blocks that are not rendered and cannot be collided with by the player, this allowed me to create a border around the sliding area. The pressure button is a just a button that check to see if a block is on top instead of a player and if so, it becomes active.
 

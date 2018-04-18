@@ -13,7 +13,7 @@ thumb: c_thumb.jpg
 published: true
 ---
 
-<b>Day 3</b>Adding more platforms and item pooling.<!--more-->
+<b>Day 3 </b>Adding more platforms and item pooling.<!--more-->
 
 I started first by creating a new platform a random distance from the last when the end of the platform was on screen and when a platform was off screen, I deleted it. I	 realised that this was causing an un-necessary waste of processing power. Instead, I created a vector of platforms and started with two platforms. I then would spawn more platforms at a random distance from the last until the last platform’s right most x co-ordinate was off screen to the right and push them on to the vector. Now when a platform’s right most x co-ordinate is off screen to the left, a bool named active is turned false, which allows the platform to be re-used and re-activated when spawning new platforms, which saves deleting and creating a new platform. 
 

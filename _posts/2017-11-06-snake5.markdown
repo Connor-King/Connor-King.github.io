@@ -13,7 +13,7 @@ thumb: c_thumb.jpg
 published: true
 ---
 
-<b>Day 5</b>Added the dreaded tail.<!--more-->
+<b>Day 5 </b>Added the dreaded tail.<!--more-->
 
 By far the hardest task, creating the tail for the snake. I put the snake sprite into its own class and added script which creates a new instance of that class when it picks up an apple and pushes on to the vector for the body it then sets its position the previous position of the one before it. 
 

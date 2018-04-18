@@ -13,7 +13,7 @@ thumb: c_thumb.jpg
 published: true
 ---
 
-<b>Day 3</b>Added door functionality and a second room layout.<!--more-->
+<b>Day 3 </b>Added door functionality and a second room layout.<!--more-->
 
 I added a simple function that if the door is open, check whether player 1 is colliding with it and if so, loads the level 2 scene (code below). I also created a backdrop for the second level which will be a sliding blocks puzzle.
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Disconnecting and Re-Connecting
-date: 2018-04-13T13:30:00.000Z
+date: 2018-04-11T13:30:00.000Z
 author: Connor King
 categories:
   - Blog
@@ -13,7 +13,7 @@ thumb: c_thumb.jpg
 published: true
 ---
 
-<b>Day 6</b>Adding disconnect and re-connect features.<!--more-->
+<b>Day 5 </b>Adding disconnect and re-connect features.<!--more-->
 
 Added code to the server to send a special packet if a player closes the client mid-game. When received, the clients screen has a dark overlay with the words “Player Disconnected, Waiting for Player” and will be unable to make any actions. Once the other player re-connects, they receive the map seed and packets for each unit, updating their game to where they left off and the other players screen returns to normal.
 

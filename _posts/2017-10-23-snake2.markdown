@@ -13,7 +13,7 @@ thumb: c_thumb.jpg
 published: true
 ---
 
-<b>Day 2</b>Added collisions to the game borders.<!--more-->
+<b>Day 2 </b>Added collisions to the game borders.<!--more-->
 
 Added a simple script that checks whether the sprite is below 0 on x axis or y axis or is above the window height on y axis or above window width on x axis. If the sprite goes past these points, the game restarts, for now.
 

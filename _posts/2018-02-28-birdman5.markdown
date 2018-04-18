@@ -13,7 +13,7 @@ thumb: c_thumb.jpg
 published: true
 ---
 
-<b>Day 5</b>Adding an endless mode.<!--more-->
+<b>Day 5 </b>Adding an endless mode.<!--more-->
 
 I created a new scene and option in the main menu named endless mode. This a mode where you are greeted with the same puzzle in level 1 but the buttons are randomly placed. Once completed, the door opens into the same room randomized again.
 

@@ -13,7 +13,7 @@ thumb: c_thumb.jpg
 published: true
 ---
 
-<b>Day 1</b>Adding a real scene manager.<!--more-->
+<b>Day 1 </b>Adding a real scene manager.<!--more-->
 
 I created a new class for the scene manager as what I had before wasn’t technically a scene manager, it works nearly exactly as it did before, just stored in a class of its own. This cleans up the game .cpp and allows for a modular scene manager.
 

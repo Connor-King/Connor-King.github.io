@@ -13,7 +13,7 @@ thumb: c_thumb.jpg
 published: true
 ---
 
-<b>Day 2</b>Adding the jump.<!--more-->
+<b>Day 2 </b>Adding the jump.<!--more-->
 
 The jump took longer than expected, I first started with simply changing the Y     co-ordinate when space is pressed but this just teleports the player up. This looked bad so instead I wrote a function that moves the player up and then stops when it reaches a certain height. I also had to change the gravity function that made the player fall so that when the player was jumping, gravity would not be enabled.
 

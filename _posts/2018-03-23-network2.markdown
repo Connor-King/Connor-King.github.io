@@ -13,7 +13,7 @@ thumb: c_thumb.jpg
 published: true
 ---
 
-<b>Day 2</b>Adding packet class and simple packet sending between clients.<!--more-->
+<b>Day 2 </b>Adding packet class and simple packet sending between clients.<!--more-->
 
 After repeated failed attempts, I managed to add a simple packet sending system between clients, this would create a packet on initialisation and send to the server which would forward the packet to the other client. The other client would simply print out the content to the console.
 

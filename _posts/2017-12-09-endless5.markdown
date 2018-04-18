@@ -13,7 +13,7 @@ thumb: c_thumb.jpg
 published: true
 ---
 
-<b>Day 5</b>Adding a score system and reading from a file.<!--more-->
+<b>Day 5 </b>Adding a score system and reading from a file.<!--more-->
 
 I implemented a score system by adding 1 each time update ran, this allowed for a quick and satisfying score system. The score would show on screen and if the score was higher than the high score, high score would update as well. When the player dies, the high score is written to a file. When the game is booted up, the high score is taken from that file to allow for a constant high score even between closing and opening the game. 
 

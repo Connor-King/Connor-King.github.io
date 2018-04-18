@@ -13,7 +13,7 @@ thumb: c_thumb.jpg
 published: true
 ---
 
-<b>Day 3</b>Adding a packet handler and seeding the map generation	.<!--more-->
+<b>Day 3 </b>Adding a packet handler and seeding the map generation	.<!--more-->
 
 I created a function which adds incoming packets to a vector then sorts them into two categories depending on the first value in the packet, map seed and unit updates. The map seed simply sets the map seed to the second value received from the packet and the unit update adds the rest of the packet to a vector which is then handled in another function which updates the units with the received stat values. 
 

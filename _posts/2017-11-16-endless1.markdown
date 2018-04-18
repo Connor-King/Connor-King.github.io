@@ -13,7 +13,7 @@ thumb: c_thumb.jpg
 published: true
 ---
 
-<b>Day 1</b>Adding gravity and platforms.<!--more-->
+<b>Day 1 </b>Adding gravity and platforms.<!--more-->
 
 Starting was a lot easier because I had created the snake game, I started by adding a sprite which would fall and stop falling once it hit a platform. I made it fall by adding a function which would always increase the Y position of the sprite unless the sprite bounding box intersected with the platform bounding box.
 

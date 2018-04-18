@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Unit Updates
-date: 2018-04-11T13:30:00.000Z
+date: 2018-04-05T13:30:00.000Z
 author: Connor King
 categories:
   - Blog
@@ -13,7 +13,7 @@ thumb: c_thumb.jpg
 published: true
 ---
 
-<b>Day 5</b>Adding a unit updater for the network.<!--more-->
+<b>Day 4 </b>Adding a unit updater for the network.<!--more-->
 
 Added a function for creating and sending packets for each unit and receiving and applying the updates, currently we only have hit points but this function can easily add more. Fixed issue with the map no generating when connecting. The issue was caused by the seed sometimes being 0 which caused the map not to generate, simple fix, add 1 to the seed.
 

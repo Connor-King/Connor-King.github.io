@@ -13,7 +13,7 @@ thumb: c_thumb.jpg
 published: true
 ---
 
-<b>Day 1</b>Making a scene manager and menu scene.<!--more-->
+<b>Day 1 </b>Making a scene manager and menu scene.<!--more-->
 
 Instead of writing all the code in the one .cpp file I thought it would be better to make a system where it runs script from different .cpp files depending on the current scene, hence a scene manager. I made a new “scene.h” header file for the scene class and did all the scripting in children of this class. I created a new scene pointer in the game .cpp file which is initialised with the main menu but changes depending on the return value of the current scenes update function. The current scene is then updated and rendered from the game .cpp file. 
 
