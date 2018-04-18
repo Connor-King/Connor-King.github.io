@@ -1,0 +1,34 @@
+---
+layout: post
+title: Door Functionality and Level 2 Backdrop
+date: 2018-02-14T13:30:00.000Z
+author: Connor King
+categories:
+  - Blog
+  - Low-Level Programming
+  - Development
+  - Birdman
+img: bird.png
+thumb: c_thumb.jpg
+published: true
+---
+
+<b>Day 3</b>Added door functionality and a second room layout.<!--more-->
+
+I added a simple function that if the door is open, check whether player 1 is colliding with it and if so, loads the level 2 scene (code below). I also created a backdrop for the second level which will be a sliding blocks puzzle.
+
+#### Level 2 Transition
+```C++
+if (door->open)
+{
+	float x = player_1->getX();
+	float y = player_1->getY();
+	float w = player_1->getWidth();
+	float h = player_1->getHeight();
+	
+	if (door->checkPlayerCollision(x, y, w, h))
+	{
+		return GameSceneEnums::LEVEL_2;
+	}
+}
+```

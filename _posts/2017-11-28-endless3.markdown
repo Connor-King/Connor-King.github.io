@@ -8,7 +8,7 @@ categories:
   - Low-Level Programming
   - Development
   - Endless Runner
-img: endless.png
+img: run.png
 thumb: c_thumb.jpg
 published: true
 ---

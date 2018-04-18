@@ -1,0 +1,69 @@
+---
+layout: post
+title: Packet Class
+date: 2018-03-23T13:30:00.000Z
+author: Connor King
+categories:
+  - Blog
+  - Low-Level Programming
+  - Development
+  - Network
+img: network.png
+thumb: c_thumb.jpg
+published: true
+---
+
+<b>Day 2</b>Adding packet class and simple packet sending between clients.<!--more-->
+
+After repeated failed attempts, I managed to add a simple packet sending system between clients, this would create a packet on initialisation and send to the server which would forward the packet to the other client. The other client would simply print out the content to the console.
+
+#### Packet Class
+```C++
+class MyPacket
+{
+public:
+	MyPacket(int s)
+	{
+		packet_data.reserve(s);
+	};
+
+	MyPacket(const enet_uint8*
+		data, size_t length)
+	{
+		packet_data.insert(
+			packet_data.end(),
+			data,
+			data + length);
+	}
+
+	template <typename T>
+	MyPacket& operator << (const T& data)
+	{
+		auto size = sizeof(data);
+		auto as_char =
+			reinterpret_cast<const char*>(&data);
+		packet_data.insert(packet_data.end(),
+			as_char,
+			as_char + size);
+		return *this;
+	}
+
+	template <typename T>
+	MyPacket& operator >> (T& data)
+	{
+		auto size = sizeof(T);
+		auto as_type =
+			reinterpret_cast<T*>
+			(&packet_data[read_pos]);
+		data = *as_type;
+		read_pos += size;
+		return *this;
+	}
+
+	bool isEndOfPacket();
+	size_t read_pos;
+
+	std::vector<char> packet_data;
+private:
+};
+```

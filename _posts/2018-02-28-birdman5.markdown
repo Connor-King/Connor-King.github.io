@@ -1,0 +1,49 @@
+---
+layout: post
+title: Endless Mode
+date: 2018-02-28T13:30:00.000Z
+author: Connor King
+categories:
+  - Blog
+  - Low-Level Programming
+  - Development
+  - Birdman
+img: bird.png
+thumb: c_thumb.jpg
+published: true
+---
+
+<b>Day 5</b>Adding an endless mode.<!--more-->
+
+I created a new scene and option in the main menu named endless mode. This a mode where you are greeted with the same puzzle in level 1 but the buttons are randomly placed. Once completed, the door opens into the same room randomized again.
+
+#### Random Button Placement
+```C++
+void RandomLevel::InitButtons(ASGE::Renderer * renderer)
+{
+	//create buttons
+	for (int i = 0; i < 5; i++)
+	{
+		int randX;
+		randX = (rand() % 11 + 1);
+		int randY;
+		randY = (rand() % 6 + 1);
+		int randP;
+		randP = (rand() % 2 + 1);
+
+		button_vector.push_back(Button(randX * 100, randY * 100, i, randP));
+	}
+	
+	//update button colliders
+	std::for_each(
+		button_vector.begin(),
+		button_vector.end(),
+		[&](Button & button)
+	{ button.loadAvatar(renderer); button.col->UpdatePosition(
+		button.getX(),
+		button.getY(),
+		button.getWidth(),
+		button.getHeight());
+	});
+}
+```

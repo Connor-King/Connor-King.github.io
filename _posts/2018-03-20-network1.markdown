@@ -1,0 +1,72 @@
+---
+layout: post
+title: A Real Scene Manager
+date: 2018-03-20T13:30:00.000Z
+author: Connor King
+categories:
+  - Blog
+  - Low-Level Programming
+  - Development
+  - Network
+img: network.png
+thumb: c_thumb.jpg
+published: true
+---
+
+<b>Day 1</b>Adding a real scene manager.<!--more-->
+
+I created a new class for the scene manager as what I had before wasn’t technically a scene manager, it works nearly exactly as it did before, just stored in a class of its own. This cleans up the game .cpp and allows for a modular scene manager.
+
+#### Scene Manager Class
+```C++
+class SceneManager
+{
+public:
+	void init(ASGE::Renderer* renderer, ASGE::Input* input);
+	void update(const ASGE::GameTime& ms, ASGE::Renderer* renderer, ASGE::Input* input);
+	void render(const ASGE::GameTime& ms, ASGE::Renderer* renderer, ASGE::Input* input);
+	GameSceneEnums getSceneEnum();
+private:
+	std::unique_ptr<Scene> current_scene = nullptr;
+	GameSceneEnums scene_enum = GameSceneEnums::NONE;
+};
+```
+
+#### Scene Manager Source
+```C++
+void SceneManager::init(ASGE::Renderer* renderer, ASGE::Input* input)
+{
+	current_scene = std::unique_ptr<MainMenu>(new MainMenu);
+	current_scene->init(renderer, input);
+}
+
+void SceneManager::update(const ASGE::GameTime & ms, ASGE::Renderer * renderer, ASGE::Input* input)
+{
+	scene_enum = current_scene->update(ms, renderer, input);
+
+	switch (scene_enum)
+	{
+	case GameSceneEnums::LEVEL_1:
+		current_scene.reset();
+		current_scene = std::unique_ptr<Level1>(new Level1);
+		current_scene->init(renderer, input);
+		break;
+
+	case GameSceneEnums::MAIN_MENU:
+		current_scene.reset();
+		current_scene = std::unique_ptr<MainMenu>(new MainMenu);
+		current_scene->init(renderer, input);
+		break;
+	}
+}
+
+void SceneManager::render(const ASGE::GameTime & ms, ASGE::Renderer * renderer, ASGE::Input* input)
+{
+	current_scene->render(ms, renderer, input);
+}
+
+GameSceneEnums SceneManager::getSceneEnum()
+{
+	return scene_enum;
+}
+```

@@ -1,0 +1,71 @@
+---
+layout: post
+title: Packet Handler
+date: 2018-03-29T13:30:00.000Z
+author: Connor King
+categories:
+  - Blog
+  - Low-Level Programming
+  - Development
+  - Network
+img: network.png
+thumb: c_thumb.jpg
+published: true
+---
+
+<b>Day 3</b>Adding a packet handler and seeding the map generation	.<!--more-->
+
+I created a function which adds incoming packets to a vector then sorts them into two categories depending on the first value in the packet, map seed and unit updates. The map seed simply sets the map seed to the second value received from the packet and the unit update adds the rest of the packet to a vector which is then handled in another function which updates the units with the received stat values. 
+
+#### Packet Handler
+```C++
+void Level1::handlePackets()
+{
+	while (!network.received_packets.empty())
+	{
+		//received_packet = network.received_packets[0];
+		int data;
+		network.received_packets[0] >> data;
+
+		switch (data)
+		{
+		case 9999:
+			int d;
+			network.received_packets[0] >> d;
+			gamePausePlay(d);
+			break;
+		case 999:
+			network.received_packets[0] >> map_seed;
+			break;
+		case 998:
+			vec_unit_pack.push_back(network.received_packets[0]);
+			break;
+		}
+		network.received_packets.pop_front();
+	}
+}
+```
+
+I also changed the server and client settings so that the game doesn’t start and the map doesn’t generate until two players are connected. Once they are, the server sends out the map seed and the map can generate. When a player disconnects and reconnects, it sends the seed again.
+
+#### Server Seed Sending
+```C++
+void Server::sendMapSeed()
+{	
+	if (network_server.connected_clients == 2 && !seed_sent)
+	{
+		network_server.server.send_packet_to_all_if(0,
+			reinterpret_cast<const enet_uint8*>(map_pack.packet_data.data()),
+			map_pack.packet_data.size(), ENET_PACKET_FLAG_RELIABLE,
+			[&](const server_client& destination) {
+			return destination.get_id() != -1;
+		});
+		seed_sent = true;
+	}
+	else if (network_server.connected_clients < 2)
+	{
+		seed_sent = false;
+	}
+}
+```
+
