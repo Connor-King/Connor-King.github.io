@@ -1,0 +1,29 @@
+---
+layout: post
+title: Menu, Game Over Screens and Kill Zone
+date: 2017-12-02T13:30:00.000Z
+author: Connor King
+categories:
+  - Blog
+  - Low-Level Programming
+  - Development
+  - Endless Runner
+img: endless.png
+thumb: c_thumb.jpg
+published: true
+---
+
+<b>Day 4</b>Added menu, game over screens and Kill Zone.<!--more-->
+
+I basically re-used the code I had in my previous snake game to create a simple menu and end screen, these would simply have an image and you could press space to start or start again. The kill zone is basically checking if the players y co-ordinate is greater the games height and if so, kill the player.
+
+#### Kill Zone
+```C++
+void EndlessGame::playerKillZone()
+{
+	if (player->returnYPos() > 720)
+	{
+		end();
+	}
+}
+```

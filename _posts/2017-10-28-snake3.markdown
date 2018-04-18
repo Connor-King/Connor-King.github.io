@@ -13,7 +13,7 @@ thumb: c_thumb.jpg
 published: true
 ---
 
-<b>Day 3</b> Added apples, power-ups and score system.<!--more-->
+<b>Day 3</b>Added apples, power-ups and score system.<!--more-->
 
 I created a new class for apples, powerups and UI text. The apples spawn when the current apple is picked up and the powerups spawn randomly. There are 3 different powerups, one which activates double points, one which activates double speed and one which allows the player to go through one side of the screen to the other, as the player does in Pacman. The score is a simple system which adds 10 every time the player picks up an apple, if the score is higher than the high score the score will update the high score as well.
 

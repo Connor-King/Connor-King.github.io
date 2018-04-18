@@ -1,0 +1,44 @@
+---
+layout: post
+title: Gravity
+date: 2017-11-16T13:30:00.000Z
+author: Connor King
+categories:
+  - Blog
+  - Low-Level Programming
+  - Development
+  - Endless Runner
+img: endless.png
+thumb: c_thumb.jpg
+published: true
+---
+
+<b>Day 1</b>Adding gravity and platforms.<!--more-->
+
+Starting was a lot easier because I had created the snake game, I started by adding a sprite which would fall and stop falling once it hit a platform. I made it fall by adding a function which would always increase the Y position of the sprite unless the sprite bounding box intersected with the platform bounding box.
+
+#### Gravity
+```C++
+void Player::gravity(double time)
+{
+	if (!grounded && !jumping)
+	{
+		pos_y += time * 400;
+	}
+}
+```
+
+#### Grounding
+```C++
+for (int i = 0; i < platform_vector.size(); i++)
+{
+	if (player->returnYPos() >= platform_vector[i].returnYPos()
+		&& player->returnYPos() <= platform_vector[i].returnYPos() + 26
+		&& player->returnXPos() >= platform_vector[i].returnXPos()
+		&& player->returnXPos() <= platform_vector[i].returnMaxX())
+	{
+	player->grounded = true;
+	}
+}	
+```
+

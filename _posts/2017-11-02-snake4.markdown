@@ -13,7 +13,7 @@ thumb: c_thumb.jpg
 published: true
 ---
 
-<b>Day 4</b> Added a main menu and a game over screen.<!--more-->
+<b>Day 4</b>Added a main menu and a game over screen.<!--more-->
 
 Menu system with only press space to start and game over screen where you press space to restart the game. This is a simple implementation of a menu, it loads a sprite screen and when space is pressed it initializes the game and stops rendering the menu screen. When the game ends, another screen is loaded which also shows the score and high score, like the menu screen you can just press space to re-initialize the game and start again.
 

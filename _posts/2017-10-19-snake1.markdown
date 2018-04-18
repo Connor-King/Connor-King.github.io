@@ -13,7 +13,7 @@ thumb: c_thumb.jpg
 published: true
 ---
 
-<b>Day 1</b> Created a sprite and added simple continuous movement.<!--more-->
+<b>Day 1</b>Created a sprite and added simple continuous movement.<!--more-->
 
 The movement, controlled by the arrow keys doesn’t allow the player to turn back on themselves, for example, pressing up does not change direction to up if going down, left would not change direction when going right and so on. This is how the original snake movement is, so that the player cannot turn back on themselves and die.
 
