@@ -7,7 +7,7 @@ categories:
 - Blog
 - Networking
 - Development
-img: post02.jpg
+img: 
 thumb: quake_thumb.jpg
 ---
 
