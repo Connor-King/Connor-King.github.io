@@ -1,0 +1,125 @@
+---
+layout: post
+title: Apples, Power-Ups and Score System
+date: 2017-10-28T13:30:00.000Z
+author: Connor King
+categories:
+  - Blog
+  - Low-Level Programming
+  - Development
+  - Snake
+img: snake.png
+thumb: c_thumb.jpg
+published: true
+---
+
+<b>Day 3</b> Added apples, power-ups and score system.<!--more-->
+
+I created a new class for apples, powerups and UI text. The apples spawn when the current apple is picked up and the powerups spawn randomly. There are 3 different powerups, one which activates double points, one which activates double speed and one which allows the player to go through one side of the screen to the other, as the player does in Pacman. The score is a simple system which adds 10 every time the player picks up an apple, if the score is higher than the high score the score will update the high score as well.
+
+#### Classes
+```C++
+class Apple
+{
+public:
+	Apple(float X, float Y);
+	~Apple();
+	void loadAvatar(ASGE::Renderer * renderer);
+	ASGE::Sprite* getAvatar();
+	float posX;
+	float posY;
+private:
+	ASGE::Sprite* avatar = nullptr;
+};
+
+class Pickup
+{
+public:
+	Pickup(float X, float Y, int p);
+	~Pickup();
+	void loadAvatar(ASGE::Renderer * renderer);
+	ASGE::Sprite* getAvatar();
+	float posX;
+	float posY;
+	int power;
+private:
+	ASGE::Sprite* avatar = nullptr;
+};
+
+class UI
+{
+public:
+	UI() = default;
+	UI(int x, int y, std::string text);
+	~UI();
+
+	virtual void render(ASGE::Renderer* renderer);
+	std::string text = "";
+	int posX = 0;
+	int posY = 0;
+private:
+	void renderTitle(ASGE::Renderer* renderer);
+};
+```
+
+#### Apple Pickup
+```C++
+if (BodyVector[0].posX >= currentApple->posX - 25 
+	&& BodyVector[0].posX <= currentApple->posX + 25
+	&& BodyVector[0].posY >= currentApple->posY - 25 
+	&& BodyVector[0].posY <= currentApple->posY + 25
+	&& appleSpawned == true)
+{			
+	appleSpawned = false;
+	delete currentApple;
+	if (activePower == POINTS)
+	{
+		score += 10;
+	}
+	score += 10;
+	hud[1]->text = this->getScore(score);
+	if (score > highScore)
+	{
+		highScore = score;
+		hud[2]->text = this->getScore(highScore);
+	}
+	generateApples();
+}
+```
+
+#### Apple Generation
+```C++
+void SnakeGame::generateApples()
+{
+	if (!appleSpawned)
+	{
+		int randX;
+		randX = (rand() % 1255);
+		int randY;
+		randY = (rand() % 620) + 75;
+		
+		Apple* apple = new Apple(randX, randY);	
+		currentApple = apple;
+		appleSpawned = true;
+	}
+}
+```
+
+#### Power-Up Generation
+```C++
+void SnakeGame::generatePickups()
+{
+	srand((unsigned)time(0));
+	int randX;
+	randX = (rand() % 1255);
+	int randY;
+	randY = (rand() % 620) + 75;
+	int randP;
+	randP = (rand() % 3) + 1;
+
+	Pickup* pick = new Pickup(randX, randY, randP);
+	currentPickup = pick;
+
+	pickupSpawned = true;
+}
+```

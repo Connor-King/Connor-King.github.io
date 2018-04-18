@@ -1,0 +1,70 @@
+---
+layout: post
+title: Sprite and Simple Continuous Movement
+date: 2017-10-19T13:30:00.000Z
+author: Connor King
+categories:
+  - Blog
+  - Low-Level Programming
+  - Development
+  - Snake
+img: snake.png
+thumb: c_thumb.jpg
+published: true
+---
+
+<b>Day 1</b> Created a sprite and added simple continuous movement.<!--more-->
+
+The movement, controlled by the arrow keys doesn’t allow the player to turn back on themselves, for example, pressing up does not change direction to up if going down, left would not change direction when going right and so on. This is how the original snake movement is, so that the player cannot turn back on themselves and die.
+
+#### How do we use it?
+```C++
+void SnakeGame::processGameActions()
+{
+	switch (game_action)
+	{
+	case GameAction::EXIT:
+		this->exit = true;
+		break;
+
+	case GameAction::PLAY:
+		this->play();
+		break;
+
+	case GameAction::END:
+		this->end();
+		break;
+
+	case GameAction::UP:
+		if (direction != DOWN)
+		{
+			direction = UP;			
+		}
+		break;
+
+	case GameAction::DOWN:
+		if (direction != UP)
+		{
+			direction = DOWN;
+		}
+		break;
+
+	case GameAction::LEFT:
+		if (direction != RIGHT)
+		{
+			direction = LEFT;
+		}
+		break;
+
+	case GameAction::RIGHT:
+		if (direction != LEFT)
+		{
+			direction = RIGHT;
+		}
+		break;
+	}
+	game_action = GameAction::NONE;
+}
+```
+
+This is a simple system and my first use of ASGE.

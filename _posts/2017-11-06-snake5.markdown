@@ -1,0 +1,41 @@
+---
+layout: post
+title: Tail
+date: 2017-11-06T13:30:00.000Z
+author: Connor King
+categories:
+  - Blog
+  - Low-Level Programming
+  - Development
+  - Snake
+img: snake.png
+thumb: c_thumb.jpg
+published: true
+---
+
+<b>Day 5</b> Added the dreaded tail.<!--more-->
+
+By far the hardest task, creating the tail for the snake. I put the snake sprite into its own class and added script which creates a new instance of that class when it picks up an apple and pushes on to the vector for the body it then sets its position the previous position of the one before it. 
+
+#### How does it work?
+```C++
+void SnakeGame::extendBody()
+{
+	Body* body = new Body(BodyVector[BodyVector.size() - 1].lastX, BodyVector[BodyVector.size() - 1].lastY);
+	BodyVector.push_back(*body);
+}
+
+void SnakeGame::tail()
+{	
+	if (BodyVector.size() > 1)
+	{
+		for (int i = 1; i < BodyVector.size(); i++)
+		{
+			BodyVector[i].lastX = BodyVector[i].posX;
+			BodyVector[i].lastY = BodyVector[i].posY;
+			BodyVector[i].posX = BodyVector[i - 1].lastX;
+			BodyVector[i].posY = BodyVector[i - 1].lastY;
+		}
+	}
+}
+```
