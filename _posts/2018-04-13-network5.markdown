@@ -8,7 +8,7 @@ categories:
   - Low-Level Programming
   - Development
   - Network
-img: network.png
+img: net.png
 thumb: c_thumb.jpg
 published: true
 ---
