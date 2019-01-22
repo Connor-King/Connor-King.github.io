@@ -52,10 +52,8 @@ social:
 # Postal address (add as many lines as necessary). Shown in footer and on Contact page.
 address:
   - lines:
-    - 3 High Street,
-    - Staple Hill,
-    - Bristol, 
-    - BS16 5HA,
+    - Filton,
+    - Bristol,
     - United Kingdom
 email: connor.king3131@gmail.com
 
@@ -66,7 +64,7 @@ email: connor.king3131@gmail.com
 # Members information. Shown on About page.
 members:
   - name: Connor King
-    position: Student
+    position: UWE Student - Game Technology
     text: Truly passionate gamer and games developer. I am self motivated and enjoy making games.
     img: profile_1.jpg
     social:
