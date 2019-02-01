@@ -16,9 +16,7 @@ carousel:
 - enemy06.png
 - enemy07.png
 - enemy08.png
-tagged: Combat, UI, Boss, Unity, C#
-client: None
-website: https://www.youtube.com/watch?v=MbW3GDtUthQ&t=12s
+tagged: C#, Unity, Combat, UI, Boss
 ---
 #### Unity Combat System
 This is a combat system and boss which I created within Unity for a university assignment. I added different movement styles, easily changeable stats and an area which it patrolls to the boss. I also added a lot of user feedback for the combat system including, screen flash, screen shake, controller rumble, knockback, material flash and more.
@@ -43,3 +41,6 @@ Boss AI:
 5. Particle Effects on Hit
 6. Splits Into Two Smaller Versions When Killed
 7. Different Range Thresholds for Attacks
+
+#### Video
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MbW3GDtUthQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

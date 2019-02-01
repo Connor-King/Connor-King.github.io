@@ -15,9 +15,7 @@ carousel:
 - platform05.png
 - platform06.png
 - platform07.png
-tagged: Unity, Unity Editor, Platforms, Bezier Curve, Spline
-client: None
-website: https://www.youtube.com/watch?v=aiR7_abCNnU
+tagged: C#, Unity, Unity Editor, Platforms, Bezier Curve, Spline
 ---
 #### Unity Platforms
 Here I have created platforms within Unity which allow the player to ride on them. I coded the bezier curve system myself and added features which allow the user to easily implement this system onto any amount of new objects. The syste, also allows for the user to change the movement system and see the line which the platform will take from within the editor.
@@ -31,3 +29,5 @@ Here I have created platforms within Unity which allow the player to ride on the
 6. Three Movement Types
 7. Bezier Curve Which is Visible in Editor
 
+#### Video
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aiR7_abCNnU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
