@@ -52,8 +52,10 @@ social:
 # Postal address (add as many lines as necessary). Shown in footer and on Contact page.
 address:
   - lines:
+    - 64 Mortimer Road
     - Filton,
     - Bristol,
+    - BS34 7LF
     - United Kingdom
 email: connor.king3131@gmail.com
 
@@ -66,7 +68,7 @@ members:
   - name: Connor King
     position: UWE Student - Game Technology
     text: Truly passionate gamer and games developer. I am self motivated and enjoy making games.
-    img: profile_1.jpg
+    img: profile.jpg
     social:
       - title: envelope #use for email address
         url: mailto:connor.king3131@gmail.com
@@ -74,4 +76,4 @@ members:
         url: https://twitter.com/Connor_King54
  
 # Short text about your company. Shown in footer on every page and also separately on Home and Contact page.
-about: "Coding can be more enjoyable than playing a game... if you like puzzle games."
+about: "Coding is just another puzzle game."
