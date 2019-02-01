@@ -1,0 +1,34 @@
+---
+layout: project
+title:  "Procedurally Generatung 3D Environments from Real World Data in Unity"
+date:   2018-12-13 16:54:46
+author: Connor King
+categories:
+- project
+img: gps.png
+thumb: thumb02.jpg
+carousel:
+- gps01.png
+- gps02.png
+- gps03.png
+- gps04.png
+- gps05.png
+- gps06.png
+tagged: C#, Open Street Maps, Open World, Open Weather Maps, GPS, XML
+client: None
+website: None
+abstract: 
+---
+#### Open World in DirectX 11
+The aim of this project is to find out if it is possible to procedurally generate interactive 3D environments based on real world data in Unity. There are many types of data sets currently tracked and recorded, embedded in modern digital maps. This project will explore how such data sets could be used to create playable 3D environment to build games, navigation applications, augmented reality experiences and more. It currently uses Open Street Map data and Open Weather Map data to generate the 3D environment.
+
+#### Features
+1. GPS Based Movement
+2. Real Time Weather Effects
+3. Procedural Building and Road Generation
+4. Streamed Data
+5. Working on Android
+
+#### Video
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3ze8mkleWsc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
