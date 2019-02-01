@@ -38,14 +38,10 @@ collections:
 
 # Social networks usernames. Many more available: google-plus, flickr, linkedin, etc). Shown in footer.
 social:
-  - title: facebook
-    url:
   - title: twitter
     url: https://twitter.com/Connor_King54
-  - title: instagram
-    url:
-  - title: tumblr
-    url:
+  - title: linkedin
+    url: https://www.linkedin.com/in/connor-k/
 
 # Postal address (add as many lines as necessary). Shown in footer and on Contact page.
 address:
