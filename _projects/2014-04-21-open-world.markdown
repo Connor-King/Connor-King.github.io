@@ -1,6 +1,6 @@
 ---
 layout: project
-title:  "Open World in DirectX"
+title:  "Open World in DirectX 11"
 date:   2018-11-25 16:54:46
 author: Connor King
 categories:
