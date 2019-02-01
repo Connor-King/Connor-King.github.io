@@ -18,12 +18,13 @@ carousel:
 - misc08.png
 tagged: Unity, Player Controller, Powerups, 2.5D, Door, Camera
 client: None
-website: https://youtu.be/_r-xqbwteTY
+website: None
+abstract: A modular player controller for Unity
 ---
 #### Player Controller, Camera, 2.5D Mode and More
-This is a small collection of features I have implemented into Unity. There is a player controller, camera, powerups, 2.5D mode, see through materials and more. 
+This is a small collection of modular features I have implemented into Unity. There is a player controller, camera, powerups, 2.5D mode, see through materials and more. 
 
-#### Our Proposal
+#### Features
 1. Player Controller
 2. 2.5D Mode
 3. Smooth Player Follow Camera
@@ -31,3 +32,5 @@ This is a small collection of features I have implemented into Unity. There is a
 5. See Through Materials
 6. Door and Switch
 
+#### Video
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_r-xqbwteTY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

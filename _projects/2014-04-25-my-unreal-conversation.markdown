@@ -13,11 +13,13 @@ carousel:
 - unreal04.png
 - unreal05.png
 - unreal06.png
-- <iframe width="560" height="315" src="https://www.youtube.com/embed/mQX5AIM_q_s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 tagged: Unreal
+client: None
+website: None
+abstract: A modular conversation tree system in Unreal Engine
 ---
 #### Unreal Engine Conversation Tree
-This is my version of a conversation tree within Unreal Engine 4. It is easily expandable and easily added to other NPCs. It is also really easy to add conversation outomcomes/effects.
+This is my version of a modular conversation tree within Unreal Engine 4. It is easily expandable and easily added to other NPCs. It is also really easy to add conversation outomcomes/effects.
 
 #### Features
 1. Easily Implemented

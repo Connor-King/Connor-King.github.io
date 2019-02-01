@@ -14,6 +14,9 @@ carousel:
 - openworld04.png
 - openworld05.png
 tagged: C++, DirectX 11, Open World, Perlin Noise, Terrain Generation, Quad Tree, Raycasting
+client: None
+website: None
+abstract: Perlin noise generation in DirectX 11
 ---
 #### Open World in DirectX 11
 The aim of this project was to learn how to create open worlds within DirectX 11. I decided to attempt a generation system similar to Minecraft. I used perlin noise and cube objects to generate the world and utilized a quad tree to optimise the collisions between the player and the ground. The world generates infinite terrain for the player to explore at will. I have also implemented a system which allows the player to place and destroy cubes. This uses my implementation of a raycast to determine the face of the cube the player is looking at so the cube is placed correctly. 
