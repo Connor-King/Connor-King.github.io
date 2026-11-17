@@ -157,7 +157,7 @@
     });
   }
 
-  /* ---------- project hero: cover backdrop + flow-field particles ---------- */
+  /* ---------- project hero: cover backdrop ---------- */
   function setupProjectHero() {
     var ph = $(".project-hero");
     if (!ph) return;
@@ -172,62 +172,6 @@
       im.onload = function () { cover.style.backgroundImage = "url('" + src + "')"; cover.classList.add("ready"); };
       im.src = src;
     }
-    if (!motionOK()) return;
-    flowField(ph);
-  }
-
-  function flowField(host) {
-    var c = document.createElement("canvas");
-    c.className = "flow-canvas";
-    c.setAttribute("aria-hidden", "true");
-    host.prepend(c);
-    var ctx = c.getContext("2d");
-    var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
-    var W = 0, H = 0, parts = [], running = false, visible = true, raf = 0, t = 0;
-    var mouse = { x: -999, y: -999 };
-    function resize() {
-      W = host.clientWidth; H = host.clientHeight;
-      c.width = W * dpr; c.height = H * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      var n = Math.round(Math.min(700, W * H / 1400));
-      parts = [];
-      for (var i = 0; i < n; i++) parts.push(spawn({}));
-    }
-    function spawn(p) { p.x = Math.random() * W; p.y = Math.random() * H; p.life = 60 + Math.random() * 200; p.hue = Math.random(); return p; }
-    function field(x, y) {
-      return Math.sin(x * .0045 + t * .0004) * 2.1 + Math.cos(y * .006 - t * .0003) * 1.7 + Math.sin((x + y) * .002) * 1.3;
-    }
-    host.addEventListener("pointermove", function (e) { var r = host.getBoundingClientRect(); mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top; });
-    host.addEventListener("pointerleave", function () { mouse.x = mouse.y = -999; });
-    function frame() {
-      raf = requestAnimationFrame(frame);
-      t += 16;
-      ctx.globalCompositeOperation = "destination-out";
-      ctx.fillStyle = "rgba(0,0,0,0.07)";
-      ctx.fillRect(0, 0, W, H);
-      ctx.globalCompositeOperation = "lighter";
-      for (var i = 0; i < parts.length; i++) {
-        var p = parts[i], a = field(p.x, p.y);
-        var vx = Math.cos(a) * 1.1, vy = Math.sin(a) * 1.1;
-        var dx = p.x - mouse.x, dy = p.y - mouse.y, d2 = dx * dx + dy * dy;
-        if (d2 < 16000) { var f = (1 - d2 / 16000) * 4; var d = Math.sqrt(d2) || 1; vx += dx / d * f; vy += dy / d * f; }
-        ctx.fillStyle = p.hue > .85 ? "rgba(122,92,255,.55)" : p.hue > .7 ? "rgba(0,255,198,.5)" : "rgba(0,200,255,.45)";
-        ctx.fillRect(p.x, p.y, 1.4, 1.4);
-        p.x += vx; p.y += vy;
-        if (--p.life < 0 || p.x < -5 || p.x > W + 5 || p.y < -5 || p.y > H + 5) spawn(p);
-      }
-    }
-    function update() {
-      var want = visible && !document.hidden && motionOK();
-      if (want && !running) { running = true; frame(); }
-      else if (!want && running) { running = false; cancelAnimationFrame(raf); if (!motionOK()) ctx.clearRect(0, 0, W, H); }
-    }
-    resize();
-    new ResizeObserver(function () { resize(); }).observe(host);
-    new IntersectionObserver(function (es) { visible = es[0].isIntersecting; update(); }).observe(host);
-    document.addEventListener("visibilitychange", update);
-    window.addEventListener("sim:fx", update);
-    update();
   }
 
   /* ---------- debug view + motion toggle ---------- */
