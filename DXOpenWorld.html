@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Open World Sandbox in C++ & DirectX 11 | Connor King</title>
-<meta name="description" content="An endless, modifiable voxel world using value noise generation, multithreaded chunk streaming and quadtree-accelerated collision.">
+<meta name="description" content="An infinite, editable voxel world in C++/DirectX 11: value-noise terrain, chunks loaded on separate threads, and quadtree-accelerated collision.">
 <link rel="canonical" href="https://connor-king.github.io/DXOpenWorld.html">
 <meta property="og:title" content="Open World Sandbox in C++ & DirectX 11 | Connor King">
-<meta property="og:description" content="An endless, modifiable voxel world using value noise generation, multithreaded chunk streaming and quadtree-accelerated collision.">
+<meta property="og:description" content="An infinite, editable voxel world in C++/DirectX 11: value-noise terrain, chunks loaded on separate threads, and quadtree-accelerated collision.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://connor-king.github.io/DXOpenWorld.html">
 <meta name="theme-color" content="#0b0f14">
@@ -30,16 +30,22 @@
   <div class="wrap">
     <a class="crumb" href="index.html#projects">&larr; All projects</a>
     <h1>Open World Sandbox in C++ &amp; DirectX 11</h1>
-    <p class="lede">An endless, modifiable voxel world using value noise generation, multithreaded chunk streaming and quadtree-accelerated collision.</p>
+    <p class="lede">An infinite, editable voxel world in C++/DirectX 11: value-noise terrain, chunks loaded on separate threads, and quadtree-accelerated collision.</p>
     <ul class="tags"><li>C++</li><li>DirectX 11</li><li>Multithreading</li><li>Procedural generation</li></ul>
   </div>
 </section>
 <div class="wrap">
   <div class="project-layout">
     <div class="prose">
-<p>For this project I explored the use of <strong>multithreading</strong>, <strong>value noise</strong> and a <strong>quadtree</strong> to create an endless interactive world. The world is generated using value noise, which gives the terrain its organic feel. The project was written in <strong>C++</strong> using the <strong>DirectX 11</strong> framework.</p>
-<p>The world is generated in chunks of 64 by 64. Each chunk is loaded in using multithreading. If a chunk is modified in any way, it is saved to an XML file, so the player can modify the world and have it stay that way.</p>
-<p>The player controls a first person character which they can use to explore and modify the world. The controller uses raycasts to detect a cube for destruction, and to detect a cube's face and normal when placing a cube. The player can collide with and modify the world thanks to a quadtree that accelerates collision detection; without it, the frame rate would drop too low to be playable.</p>
+<p>An infinite voxel sandbox written in <strong>C++</strong> on <strong>DirectX 11</strong>. It tackles three problems that sit underneath any large real-time world: generating terrain procedurally, loading it as the player moves, and keeping collision cheap as the world grows.</p>
+<h3>How it works</h3>
+<ul>
+<li><strong>Procedural terrain.</strong> Terrain is generated from <strong>value noise</strong>, which gives it an organic shape with no hand-authored content.</li>
+<li><strong>Chunk streaming.</strong> The world is split into 64&times;64 chunks, each loaded using <strong>multithreading</strong> so chunk loading runs off the main thread.</li>
+<li><strong>Persistence.</strong> Any chunk the player modifies is saved to XML and reloaded later, so edits survive the chunk being unloaded and loaded again.</li>
+<li><strong>Interaction.</strong> Raycasts against the voxel grid pick the cube to destroy, and return the hit face and normal so new cubes are placed on the correct side.</li>
+<li><strong>Collision.</strong> A <strong>quadtree</strong> limits collision tests to nearby geometry. Without it, the frame rate dropped too low to be playable.</li>
+</ul>
 </div>
     <aside><dl class="meta"><div><dt>Tech</dt><dd>C++, DirectX 11</dd></div><div><dt>Focus</dt><dd>Multithreading, value noise, spatial partitioning</dd></div></dl></aside>
   </div>

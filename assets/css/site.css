@@ -178,7 +178,9 @@ p { margin: 0 0 1em; }
 .project-layout { display: grid; gap: clamp(24px, 4vw, 48px); grid-template-columns: minmax(0, 1fr) 280px; align-items: start; padding-bottom: 48px; }
 @media (max-width: 860px) { .project-layout { grid-template-columns: 1fr; } .project-layout aside { order: -1; } }
 .prose p { color: #cfd8e3; max-width: 70ch; }
-.prose ul { color: #cfd8e3; padding-left: 1.1em; }
+.prose ul, .prose ol { color: #cfd8e3; padding-left: 1.2em; max-width: 70ch; }
+.prose li { margin-bottom: .5em; }
+.prose h3 { margin: 1.8em 0 .6em; }
 .prose li::marker { color: var(--accent); }
 .prose strong { color: var(--text); font-weight: 600; }
 .meta { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; margin: 0; display: grid; gap: 14px; }

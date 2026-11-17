@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Modular First Person Controller | Connor King</title>
-<meta name="description" content="A component-based first person controller in Unity with advanced movement: sliding, grappling, mantling, wall running, zip lines and more.">
+<meta name="description" content="A component-based first person controller in Unity: each movement ability is a self-contained module that can be added or removed without touching the core controller.">
 <link rel="canonical" href="https://connor-king.github.io/ModularFPController.html">
 <meta property="og:title" content="Modular First Person Controller | Connor King">
-<meta property="og:description" content="A component-based first person controller in Unity with advanced movement: sliding, grappling, mantling, wall running, zip lines and more.">
+<meta property="og:description" content="A component-based first person controller in Unity: each movement ability is a self-contained module that can be added or removed without touching the core controller.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://connor-king.github.io/ModularFPController.html">
 <meta name="theme-color" content="#0b0f14">
@@ -30,16 +30,20 @@
   <div class="wrap">
     <a class="crumb" href="index.html#projects">&larr; All projects</a>
     <h1>Modular First Person Controller</h1>
-    <p class="lede">A component-based first person controller in Unity with advanced movement: sliding, grappling, mantling, wall running, zip lines and more.</p>
+    <p class="lede">A component-based first person controller in Unity: each movement ability is a self-contained module that can be added or removed without touching the core controller.</p>
     <ul class="tags"><li>Unity</li><li>C#</li><li>Component architecture</li><li>Movement systems</li></ul>
   </div>
 </section>
 <div class="wrap">
   <div class="project-layout">
     <div class="prose"><div class="video"><iframe src="https://www.youtube-nocookie.com/embed/d-K1C0UQNck" title="Modular First Person Controller video" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
-<p>For this project I explored using a <strong>component-based system</strong> to create a first person controller with advanced movement mechanics in <strong>Unity</strong>.</p>
-<p>The controller is built from modular components which can be added to or removed from the main controller without affecting how it works. Most components need no specific objects in the scene (only the zip line and pole swinging do), so the controller works in most environments without setup.</p>
-<p>The components include:</p>
+<p>An advanced first person controller for <strong>Unity</strong>, built around a <strong>component-based architecture</strong> so movement abilities can be mixed and matched per project.</p>
+<h3>Design</h3>
+<ul>
+<li><strong>Modular abilities.</strong> Each mechanic is a separate component that can be added to or removed from the core controller without changing how the controller works.</li>
+<li><strong>Minimal scene setup.</strong> Most abilities need no special objects in the level. Only zip lines and pole swinging do, so the controller works in most environments without setup.</li>
+</ul>
+<h3>Abilities</h3>
 <ul><li>Sliding</li><li>Grappling (pull towards an object, or swing)</li><li>Mantling (step up and climb)</li><li>Ledge grabbing</li><li>Wall running (vertical and horizontal)</li><li>Zip lines</li><li>Pole swinging</li></ul>
 </div>
     <aside><dl class="meta"><div><dt>Tech</dt><dd>Unity, C#</dd></div><div><dt>Focus</dt><dd>Component-based architecture, character movement</dd></div></dl></aside>

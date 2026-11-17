@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>3D Environments From Real-World Data | Connor King</title>
-<meta name="description" content="Streams OpenStreetMap, weather and time data for the device's GPS location and builds a playable 3D environment in real time, on mobile and PC.">
+<meta name="description" content="Builds a playable 3D environment in real time from the device's GPS position, using OpenStreetMap buildings and roads plus weather and local time. Runs on mobile and PC.">
 <link rel="canonical" href="https://connor-king.github.io/GPSGame.html">
 <meta property="og:title" content="3D Environments From Real-World Data | Connor King">
-<meta property="og:description" content="Streams OpenStreetMap, weather and time data for the device's GPS location and builds a playable 3D environment in real time, on mobile and PC.">
+<meta property="og:description" content="Builds a playable 3D environment in real time from the device's GPS position, using OpenStreetMap buildings and roads plus weather and local time. Runs on mobile and PC.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://connor-king.github.io/GPSGame.html">
 <meta name="theme-color" content="#0b0f14">
@@ -30,16 +30,23 @@
   <div class="wrap">
     <a class="crumb" href="index.html#projects">&larr; All projects</a>
     <h1>3D Environments From Real-World Data</h1>
-    <p class="lede">Streams OpenStreetMap, weather and time data for the device's GPS location and builds a playable 3D environment in real time, on mobile and PC.</p>
+    <p class="lede">Builds a playable 3D environment in real time from the device's GPS position, using OpenStreetMap buildings and roads plus weather and local time. Runs on mobile and PC.</p>
     <ul class="tags"><li>Unity</li><li>OpenStreetMap</li><li>Procedural meshes</li><li>Mobile</li></ul>
   </div>
 </section>
 <div class="wrap">
   <div class="project-layout">
     <div class="prose">
-<p>This project investigates creating a 3D game environment from real-world map data in <strong>Unity</strong>. It gathers multiple data types, including weather, buildings, roads and local time, and builds a playable 3D environment in real time, using that data to change the environment dynamically. It is lightweight enough to run on a mobile device, but flexible enough to be customised for a complex 3D application.</p>
-<p>The system first gets the device's <strong>GPS location</strong>, then requests the map data for that location from the <strong>OpenStreetMap API</strong>. The data is parsed to group the objects, and a mesh is created for each object and placed in the matching location in the scene.</p>
-<p>The project works on both mobile and PC. It successfully builds 3D environments from the map data where that data is available, and changes the environment based on other real-world variables such as the weather.</p>
+<p>A <strong>Unity</strong> system that turns real-world location data into a playable 3D environment at runtime: take external data you don't control, and build a usable scene from it on the fly.</p>
+<h3>Pipeline</h3>
+<ol>
+<li><strong>Locate.</strong> Read the device's <strong>GPS</strong> position.</li>
+<li><strong>Fetch.</strong> Request map data for that location from the <strong>OpenStreetMap API</strong>, along with weather data and local time.</li>
+<li><strong>Parse.</strong> Group the returned map data into objects such as buildings and roads.</li>
+<li><strong>Build.</strong> Generate a mesh for each object at runtime and place it at its matching position in the scene.</li>
+<li><strong>React.</strong> Change the environment dynamically based on real-world variables such as the weather.</li>
+</ol>
+<p>The system is lightweight enough to run on a mobile device, but flexible enough to be customised for a complex 3D application. It runs on both mobile and PC, and builds environments wherever map data is available.</p>
 </div>
     <aside><dl class="meta"><div><dt>Tech</dt><dd>Unity, C#, OpenStreetMap API</dd></div><div><dt>Platforms</dt><dd>Mobile and PC</dd></div><div><dt>Focus</dt><dd>Real-world data, runtime mesh generation</dd></div></dl></aside>
   </div>

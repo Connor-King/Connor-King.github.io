@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Collision & Response System in DirectX 11 | Connor King</title>
-<meta name="description" content="A physics, collision and response system built from scratch in C++ and DirectX 11, with quadtree broad-phase.">
+<meta name="description" content="A physics, collision detection and response system written from scratch in C++/DirectX 11, with AABB, OBB, sphere and ray tests and a quadtree broad phase.">
 <link rel="canonical" href="https://connor-king.github.io/DXCollisions.html">
 <meta property="og:title" content="Collision & Response System in DirectX 11 | Connor King">
-<meta property="og:description" content="A physics, collision and response system built from scratch in C++ and DirectX 11, with quadtree broad-phase.">
+<meta property="og:description" content="A physics, collision detection and response system written from scratch in C++/DirectX 11, with AABB, OBB, sphere and ray tests and a quadtree broad phase.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://connor-king.github.io/DXCollisions.html">
 <meta name="theme-color" content="#0b0f14">
@@ -30,17 +30,21 @@
   <div class="wrap">
     <a class="crumb" href="index.html#projects">&larr; All projects</a>
     <h1>Collision &amp; Response System in DirectX 11</h1>
-    <p class="lede">A physics, collision and response system built from scratch in C++ and DirectX 11, with quadtree broad-phase.</p>
+    <p class="lede">A physics, collision detection and response system written from scratch in C++/DirectX 11, with AABB, OBB, sphere and ray tests and a quadtree broad phase.</p>
     <ul class="tags"><li>C++</li><li>DirectX 11</li><li>Physics</li><li>Spatial partitioning</li></ul>
   </div>
 </section>
 <div class="wrap">
   <div class="project-layout">
     <div class="prose">
-<p>For this project I looked at how collision systems work within games and game engines, then created my own <strong>physics, collision and response system</strong> in <strong>DirectX 11</strong> using <strong>C++</strong>. The project includes a first person character controller which the user controls to jump from one platform to another. The smaller platforms have a bouncier material which acts like a trampoline.</p>
-<p>The collision system supports several physics objects:</p>
-<ul><li>Axis-aligned bounding boxes</li><li>Oriented bounding boxes</li><li>Spheres</li><li>Raycasts</li></ul>
-<p>Using these objects, I implemented different methods for detecting collisions between them. To speed up collision detection, I built a <strong>quadtree</strong>, which lets the system check for collisions only between nearby objects, substantially reducing the time collision checks take.</p>
+<p>A physics, collision detection and response system written from scratch in <strong>C++</strong> on <strong>DirectX 11</strong>, built to understand how collision works inside games and game engines rather than relying on one.</p>
+<h3>How it works</h3>
+<ul>
+<li><strong>Collision primitives.</strong> Axis-aligned bounding boxes, oriented bounding boxes, spheres and raycasts, with intersection tests between them.</li>
+<li><strong>Broad phase.</strong> A <strong>quadtree</strong> partitions the scene so only nearby objects are tested against each other, substantially reducing the cost of collision checks.</li>
+<li><strong>Response and materials.</strong> Collisions drive a physics response, with materials per surface: the smaller platforms use a bouncier material that acts as a trampoline.</li>
+<li><strong>Test scene.</strong> A first person character controller jumping between platforms exercises the whole system end to end.</li>
+</ul>
 </div>
     <aside><dl class="meta"><div><dt>Tech</dt><dd>C++, DirectX 11</dd></div><div><dt>Focus</dt><dd>Collision detection, physics response, quadtree</dd></div></dl></aside>
   </div>

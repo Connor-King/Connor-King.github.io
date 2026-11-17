@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Self-Driving Car with Machine Learning | Connor King</title>
-<meta name="description" content="A convolutional neural network, trained in Python and TensorFlow, that drives a car in Unity from camera frames alone while avoiding other cars.">
+<meta name="description" content="A convolutional neural network, trained in Python/TensorFlow on recorded human driving, that steers a car in Unity using only its front camera.">
 <link rel="canonical" href="https://connor-king.github.io/SelfDrivingCar.html">
 <meta property="og:title" content="Self-Driving Car with Machine Learning | Connor King">
-<meta property="og:description" content="A convolutional neural network, trained in Python and TensorFlow, that drives a car in Unity from camera frames alone while avoiding other cars.">
+<meta property="og:description" content="A convolutional neural network, trained in Python/TensorFlow on recorded human driving, that steers a car in Unity using only its front camera.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://connor-king.github.io/SelfDrivingCar.html">
 <meta name="theme-color" content="#0b0f14">
@@ -30,16 +30,22 @@
   <div class="wrap">
     <a class="crumb" href="index.html#projects">&larr; All projects</a>
     <h1>Self-Driving Car with Machine Learning</h1>
-    <p class="lede">A convolutional neural network, trained in Python and TensorFlow, that drives a car in Unity from camera frames alone while avoiding other cars.</p>
+    <p class="lede">A convolutional neural network, trained in Python/TensorFlow on recorded human driving, that steers a car in Unity using only its front camera.</p>
     <ul class="tags"><li>Unity</li><li>Python</li><li>TensorFlow</li><li>CNN</li></ul>
   </div>
 </section>
 <div class="wrap">
   <div class="project-layout">
     <div class="prose">
-<p>This project was my first experience of using machine learning to build something. I created a self-driving car within <strong>Unity</strong> using <strong>Python</strong> and <strong>TensorFlow</strong>. The catch: the only input to the neural network is the image from the front of the car.</p>
-<p>The system is a <strong>convolutional neural network</strong> which analyses each frame to decide whether to drive forward, turn left or turn right. To train the network, I drove around a random track for 2 hours. While I drove, a Python program captured the view from the front of the car along with my input (left, right or forward) for that frame. This was the data I used to train the network.</p>
-<p>After training, the car could complete a full lap of the track while avoiding the other stationary cars. It could also drive a randomly generated track (completing it, or running for a good while), showing good generalisation.</p>
+<p>A self-driving car in <strong>Unity</strong>, controlled by a <strong>convolutional neural network</strong> built in <strong>Python</strong> and <strong>TensorFlow</strong>. The constraint: the network's only input is the image from the front of the car.</p>
+<h3>How it works</h3>
+<ul>
+<li><strong>Data capture.</strong> I drove around a random track for 2 hours while a Python tool recorded each frame from the car's camera alongside my input for that frame (left, right or forward).</li>
+<li><strong>Model.</strong> The CNN is trained on those labelled frames to classify each new frame into one of the three actions, learning to imitate a human driver.</li>
+<li><strong>Control loop.</strong> At runtime, each camera frame is passed through the network and the predicted action drives the car.</li>
+</ul>
+<h3>Results</h3>
+<p>After training, the car completed a full lap of the track while avoiding stationary cars. It could also drive randomly generated tracks it hadn't been trained on, either completing them or running for a good while, showing the model had generalised rather than memorised one track.</p>
 </div>
     <aside><dl class="meta"><div><dt>Tech</dt><dd>Unity, Python, TensorFlow</dd></div><div><dt>Focus</dt><dd>Convolutional neural networks, data capture, generalisation</dd></div></dl></aside>
   </div>
