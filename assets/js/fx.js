@@ -21,32 +21,14 @@
     toastT = setTimeout(function () { toastEl.classList.remove("show"); }, 2200);
   }
 
-  /* ---------- pointer-driven globals: grid spotlight + reticle ---------- */
-  var reticle = null;
-  if (fine) {
-    reticle = document.createElement("div");
-    reticle.className = "reticle";
-    reticle.setAttribute("aria-hidden", "true");
-    document.body.appendChild(reticle);
-  }
-  var px = innerWidth / 2, py = innerHeight * .3, rx = px, ry = py, pending = false, retRaf = 0;
+  /* ---------- pointer-driven globals: grid spotlight ---------- */
+  var px = innerWidth / 2, py = innerHeight * .3, pending = false;
   function onMove(e) {
     px = e.clientX; py = e.clientY;
     if (!pending) { pending = true; requestAnimationFrame(applyMove); }
-    if (reticle && motionOK()) {
-      reticle.classList.add("on");
-      reticle.classList.toggle("hot", !!(e.target.closest && e.target.closest("a, button, .card, input, [role=option]")));
-      if (!retRaf) retRaf = requestAnimationFrame(trail);
-    }
   }
   function applyMove() { pending = false; root.style.setProperty("--cx", px + "px"); root.style.setProperty("--cy", py + "px"); }
-  function trail() {
-    rx += (px - rx) * .22; ry += (py - ry) * .22;
-    reticle.style.transform = "translate(" + rx.toFixed(1) + "px," + ry.toFixed(1) + "px)";
-    retRaf = (Math.abs(px - rx) + Math.abs(py - ry) > .2) ? requestAnimationFrame(trail) : 0;
-  }
   window.addEventListener("pointermove", onMove, { passive: true });
-  document.addEventListener("pointerleave", function () { if (reticle) reticle.classList.remove("on"); });
 
   /* ---------- scroll progress + timeline + parallax ---------- */
   var header = $(".site-header");
@@ -184,7 +166,6 @@
     var off = root.classList.toggle("fx-off");
     store("ck-fx", off ? "off" : null);
     window.dispatchEvent(new CustomEvent("sim:fx", { detail: !off }));
-    if (reticle) reticle.classList.remove("on");
     onScroll();
     toast(off ? "Motion effects off (remembered on this device)" : "Motion effects on");
   }

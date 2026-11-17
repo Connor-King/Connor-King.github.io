@@ -49,23 +49,26 @@ function init() {
   igeo.setAttribute("aGrid", new THREE.InstancedBufferAttribute(grid, 2));
   igeo.instanceCount = N * N;
 
+  const WAVES = 8; // max simultaneous pulses (each fades in ~4s)
   const uniforms = {
     uTime: { value: 0 },
     uMouse: { value: new THREE.Vector2(9999, 9999) },
     uMouseAmt: { value: 0 },
-    uWave: { value: new THREE.Vector3(0, 0, -100) }, // x, z, start time
+    // ring buffer of shockwaves (x, z, start time) so several can overlap
+    uWaves: { value: Array.from({ length: WAVES }, () => new THREE.Vector3(0, 0, -100)) },
     uDebug: { value: 0 },
     uHalf: { value: (N - 1) / 2 },
   };
 
   const mat = new THREE.ShaderMaterial({
     uniforms,
+    defines: { WAVES },
     transparent: true,
     vertexShader: /* glsl */`
       attribute vec2 aGrid;
       uniform float uTime, uMouseAmt, uHalf;
       uniform vec2 uMouse;
-      uniform vec3 uWave;
+      uniform vec3 uWaves[WAVES];
       varying vec3 vLocal; varying vec3 vN; varying float vH; varying float vHot; varying vec3 vWorld; varying float vWave;
       float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
       float vnoise(vec2 p){
@@ -81,10 +84,13 @@ function init() {
         float d = distance(g, uMouse);
         float hot = exp(-d*d / 22.0) * uMouseAmt;
         h += hot * 5.5;
-        float age = t - uWave.z;
-        float r = age * 16.0;
-        float wd = distance(g, uWave.xy) - r;
-        float wave = exp(-wd*wd / 6.0) * exp(-age * 0.9) * step(0.0, age);
+        float wave = 0.0;
+        for (int i = 0; i < WAVES; i++) {
+          float age = t - uWaves[i].z;
+          float wd = distance(g, uWaves[i].xy) - age * 16.0;
+          wave += exp(-wd*wd / 6.0) * exp(-age * 0.9) * step(0.0, age);
+        }
+        wave = min(wave, 1.6);                     // overlapping rings stack, but don't spike
         h += wave * 4.0;
         float edgeFade = smoothstep(uHalf, uHalf * 0.55, max(abs(g.x), abs(g.y)));
         h = floor(h * 2.0) / 2.0 + 0.15;           // quantise: voxel steps
@@ -187,7 +193,7 @@ function init() {
   });
   let pulses = 0;
   function pulse(x, z) {
-    uniforms.uWave.value.set(x, z, uniforms.uTime.value);
+    uniforms.uWaves.value[pulses % WAVES].set(x, z, uniforms.uTime.value);
     pulses++;
     if (hud) hud.pulses.textContent = String(pulses).padStart(3, "0");
     if (!running) renderOnce();
